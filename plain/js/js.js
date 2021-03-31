@@ -1,5 +1,4 @@
 const el = document.getElementById("app");
-// const body = document.getElementById("body");
 const header = document.createElement("div");
 const main = document.createElement("div");
 const footer = document.createElement("div");
@@ -12,9 +11,6 @@ el.style.width = "100%";
 el.style.height = "100%";
 el.style.display = "flex";
 el.style.flexDirection = "column";
-
-// body.style.margin = 0;
-// el.style.margin = 0;
 
 header.style.border = "1px solid black";
 main.style.border = "1px solid black";

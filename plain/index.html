@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Google</title>
+    
     <style>
       body {
         margin: 0;
@@ -43,7 +44,7 @@
       }
     </style>
   </head>
-  <body>
+  <body　onload="window.alert('私のホームページへようこそ!');">
     <div class="app">
       <div class="header">
         <div>
@@ -89,6 +90,7 @@
       const removeElement = document.getElementById("remove");
       const parentNode = removeElement.parentNode;
       parentNode.removeChild(removeElement);
+      // parentNode.innerHTML = "この親ノードは変更されました";
     </script>
   </body>
 </html>
