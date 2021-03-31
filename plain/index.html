@@ -58,10 +58,15 @@
         </div>
       </div>
 
-      <div class="main">body</div>
-      <!-- <div class="main" id="test">body</div> -->
-      <!-- <button onclick="changeColor('blue');">blue</button> -->
-      <!-- <button onclick="changeColor('red');">red</button> -->
+      <div class="main" id="body-container">
+        <div id="body-heading">body</div>
+        <button onclick="changeColor('blue');">blue</button>
+        <button onclick="changeColor('red');">red</button>
+        <button onclick="changeColor('green');">green</button>
+        <div>child9</div>
+        <div>child11</div>
+        <div id="remove">この部分は削除されます</div>
+      </div>
 
       <div class="footer">footer</div>
     </div>
@@ -69,10 +74,21 @@
     <script>
       console.log("hello");
 
-      // const changeColor = (newColor) => {
-      //   const e = document.getElementById("test");
-      //   e.style.color = newColor;
-      // };
+      //id名からノードを取得して、操作する
+      const changeColor = (newColor) => {
+        const e = document.getElementById("body-heading");
+        e.style.color = newColor;
+      };
+
+      //子ノードを取得して操作する
+      const baseElement = document.getElementById("body-container");
+      const changeChildNode = baseElement.childNodes[7]; //添字はなぜか奇数
+      changeChildNode.innerHTML = "childNode was changed";
+
+      //親ノードを取得して操作する
+      const removeElement = document.getElementById("remove");
+      const parentNode = removeElement.parentNode;
+      parentNode.removeChild(removeElement);
     </script>
   </body>
 </html>
