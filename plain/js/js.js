@@ -23,6 +23,7 @@ footer.style.border = "1px solid black";
 
 el.appendChild(header);
 header.innerHTML = "header" + "hello";
+// header.innerHTML = "hello";
 
 el.appendChild(main);
 main.innerHTML = "main";
