@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Google</title>
+    <title>1st</title>
     
     <style>
       body {
@@ -15,29 +15,105 @@
         position: absolute;
         width: 100%;
         height: 100%;
-
         display: flex;
         flex-direction: column;
+        font-size: 14px;
       }
 
       .header {
-        border: 1px solid black;
         display: flex;
-
         justify-content: space-between;
+        padding: 20px 20px 20px 20px;
+      }
 
-        padding: 10px 15px 10px 15px;
-      }
       .main {
-        border: 1px solid black;
         flex-grow: 1;
+        text-align: center;
       }
+
+      .top-img {
+        width:272px;
+      }
+
+      .input-container {
+        position: relative;
+        width: 0 auto;
+        max-width: 584px;
+        margin: 0 auto;
+        padding: 6px 20px;
+      }
+
+      .input {
+        width: 100%;
+        max-width: 584px;
+        height: 44px;
+        border-radius: 24px;
+        padding: 2px 8px 2px 50px;
+        margin: 0 auto;
+        border: 1px solid #e0e9f1;
+        box-sizing: border-box;
+      }
+        
+      .input:hover {
+        box-shadow: 0px 1px 5px rgba(70, 62, 62, 0.15);
+      }
+
+      .serch {
+        margin-right: 20px;
+        position: absolute;
+        left: 40px;
+        width: 20px;
+        height: 80%;
+      }
+
+      .mic {
+        margin-right: 20px;
+        position: absolute;
+        right: 20px;
+        width: 24px;
+        height: 80%;
+      }
+
+      .item {
+        background: #f8f9fa;
+        margin-right: 10px;
+        padding: 7px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .item:hover {
+        box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+        border: 1px solid #dadce0;
+      }
+
       .footer {
-        border: 1px solid black;
+        background: #f5f5f5;
+        color: rgba(0, 0, 0, 0.54);
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        font-size: 14px;
+      }
+
+      .footer-top {
+        padding: 15px 30px;
+        border-bottom: 1px solid #dadce0;
+      }
+
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 20px;
+        @media screen and (max-width: 1200px) {
+          justify-content: space-evenly;
+        }
       }
 
       span {
         cursor: pointer;
+        padding: 0 10px;
       }
       span:hover {
         text-decoration: underline;
@@ -58,39 +134,40 @@
           <span>Logo</span>
         </div>
       </div>
+    
 
       <div class="main" id="body-container">
-        <div id="body-heading">body</div>
-        <button onclick="changeColor('blue');">blue</button>
-        <button onclick="changeColor('red');">red</button>
-        <button onclick="changeColor('green');">green</button>
-        <div>child9</div>
-        <div>child11</div>
-        <div id="remove">この部分は削除されます</div>
+        <img class="top-img" alt=""
+      src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+    />
+        <div style="padding: 20px;">
+          <div class="input-container">
+            <input type="text" class="input">
+            <img src="../src/assets/search.svg" alt="serch" class="serch">
+            <img src="../src/assets/mic.svg" alt="mic" class="mic">
+          </div>
+          <div style=" display: flex; justify-content: center; margin: 30px;">
+          <div class="item">Google検索</div>
+          <div class="item">I'm Feeling Lucky</div>
+          </div>
+        </div>
       </div>
 
-      <div class="footer">footer</div>
+      <div class="footer">
+        <div class="footer-top" style="padding: 15px 30px;">日本</div>
+        <div class="footer-bottom">
+          <div class="footer-left">
+            <span>広告</span>
+            <span>ビジネス</span>
+            <span>検索の仕組み</span>
+          </div>
+          <div class="footer-right">
+            <span>プライバシー</span>
+            <span>規約</span>
+            <span>設定</span>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <script>
-      console.log("hello");
-
-      //id名からノードを取得して、操作する
-      const changeColor = (newColor) => {
-        const e = document.getElementById("body-heading");
-        e.style.color = newColor;
-      };
-
-      //子ノードを取得して操作する
-      const baseElement = document.getElementById("body-container");
-      const changeChildNode = baseElement.childNodes[5]; //添字はなぜか奇数
-      changeChildNode.innerHTML = "childNode was changed";
-
-      //親ノードを取得して操作する
-      const removeElement = document.getElementById("remove");
-      const parentNode = removeElement.parentNode;
-      parentNode.removeChild(removeElement);
-      // parentNode.innerHTML = "この親ノードは変更されました";
-    </script>
   </body>
 </html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practice</title>
+    
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .app {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 20px 20px 20px;
+        
+      }
+      .main {
+        flex-grow: 1;
+        text-align: center;
+      }
+
+      .footer {
+        border: 1px solid black;
+      }
+
+      span {
+        cursor: pointer;
+      }
+      span:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body　onload="window.alert('私のホームページへようこそ!');">
+    <div class="app">
+      <div class="header">
+        <div>
+          <span>Googleについて</span>
+          <span>ストア</span>
+        </div>
+        <div>
+          <span>Gmail</span>
+          <span>Photos</span>
+          <span>Dots</span>
+          <span>Logo</span>
+        </div>
+      </div>
+    
+
+      <div class="main" id="body-container">
+        <div id="body-heading">body</div>
+        <button onclick="changeColor('blue');">blue</button>
+        <button onclick="changeColor('red');">red</button>
+        <button onclick="changeColor('green');">green</button>
+        <div>child9</div>
+        <div>child11</div>
+        <div id="remove">この部分は削除されます</div>
+
+        <button id="button" oncontextmenu="event.preventDefault();">Click here with your mouse...</button>
+        <p id="log"></p>
+
+      </div>
+
+      <div class="footer">footer</div>
+    </div>
+
+    <script>
+      let button = document.querySelector('#button');
+      let log = document.querySelector('#log');
+      button.addEventListener('mouseup', logMouseButton);
+
+function logMouseButton(e) {
+  if (typeof e === 'object') {
+    switch (e.button) {
+      case 0:
+        log.textContent = 'Left button clicked.';
+        break;
+      case 1:
+        log.textContent = 'Middle button clicked.';
+        break;
+      case 2:
+        log.textContent = 'Right button clicked.';
+        break;
+      default:
+        log.textContent = `Unknown button code: ${btnCode}`;
+    }
+  }
+}
+
+      //id名からノードを取得して、操作する
+      const changeColor = (newColor) => {
+        const e = document.getElementById("body-heading");
+        e.style.color = newColor;
+      };
+
+      //子ノードを取得して操作する
+      const baseElement = document.getElementById("body-container");
+      const changeChildNode = baseElement.childNodes[7]; //添字はなぜか奇数
+      changeChildNode.innerHTML = "childNode was changed";
+
+      //親ノードを取得して操作する
+      const removeElement = document.getElementById("remove");
+      const parentNode = removeElement.parentNode;
+      parentNode.removeChild(removeElement);
+      // parentNode.innerHTML = "この親ノードは変更されました";
+    </script>
+  </body>
+</html>
