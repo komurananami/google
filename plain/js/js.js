@@ -293,7 +293,7 @@ container.appendChild(textContainer);
 textContainer.appendChild(textConText1);
 textConText1.innerHTML = "Google検索";
 textContainer.appendChild(textConText2);
-textConText2.innerHTML = "I'm Feeking Lucky";
+textConText2.innerHTML = "I'm Feeling Lucky";
 
 footer.appendChild(footerTop);
 footerTop.innerHTML = "日本";
