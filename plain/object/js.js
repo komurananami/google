@@ -17,13 +17,6 @@ const App = {
     renderComponents() {
       const els = App.elements;
 
-      // const overHeaderLeftAImg = () => {
-      //   els.headerLeftAImg.style.textDecoration = "underline";
-      // };
-      // const outHeaderLeftAImg = () => {
-      //   els.headerLeftAImg.style.textDecoration = "none";
-      // };
-
       console.log(" Lets create the base elements");
 
       els.header.style.display = "flex";
@@ -44,8 +37,21 @@ const App = {
       els.headerRightA3.style.cursor = "pointer";
       els.headerRightA4.style.cursor = "pointer";
 
-      // els.headerLeftAImg.onmouseover = overHeaderLeftAImg;
-      // els.headerLeftAImg.onmouseout = outHeaderLeftAImg;
+      els.main.style.padding = "0 80px";
+      els.home.style.position = "relative";
+      els.home.style.padding = "170px 0";
+      els.homeTopAnimation.style.position = "absolute";
+      els.homeTopAnimation.style.width = "600px";
+      els.homeTopAnimation.style.top = "0px";
+      els.homeTopAnimation.style.right = "10vw";
+      els.homeMessageBtn.style.borderRadius = "20px";
+      els.homeMessageBtn.style.cursor = "pointer";
+      els.homeMessageBtn.style.border = "none";
+      els.homeMessageBtn.style.padding = "10px 15px";
+      els.homeMessageBtn.style.boxShadow = "0 0.2em 0.5em rgba(0, 0, 0, 0.2)";
+      els.homeMessageBtn.style.background = "#fe697d";
+      els.homeMessageBtn.style.color = "#ffffff";
+      els.homeMessageBtn.style.fontSize = "15px";
 
       els.app.appendChild(els.header);
       els.header.appendChild(els.headerLeft);
@@ -64,17 +70,27 @@ const App = {
       els.headerRight.appendChild(els.headerRightA4);
       els.headerRightA4.innerHTML = "Playground";
 
-      //   els.main.appendChild(els.a1);
-      //   lottie.loadAnimation({
-      //     container: els.a1,
-      //     renderer: "svg",
-      //     loop: true,
-      //     autoplay: true,
-      //     animationData: A1,
-      //   });
-
-      els.main.innerHTML = "main";
       els.app.appendChild(els.main);
+      els.main.appendChild(els.home);
+      els.home.appendChild(els.homeMessage);
+      els.homeMessage.appendChild(els.homeMessageH1);
+      els.homeMessageH1.innerHTML = "Nanami Komura's </br>Portfolio";
+      els.homeMessage.appendChild(els.homeMessageP1);
+      els.homeMessageP1.innerHTML =
+        "welcome to my portfolio site. <br/> This is my introduction and tech notes. <br />You can see tech record <br/>in PLAYGROUND";
+      els.homeMessage.appendChild(els.homeMessageBtn);
+      els.homeMessageBtn.innerHTML = "go to PLAYGROUND";
+
+      els.home.appendChild(els.homeTopAnimation);
+
+      els.homeTopAnimation.appendChild(els.a1);
+      lottie.loadAnimation({
+        container: els.a1,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        animationData: A1,
+      });
 
       console.log("Done");
       console.log(app);
@@ -95,6 +111,14 @@ const App = {
     headerRightA4: document.createElement("a"),
 
     main: document.createElement("div"),
+    home: document.createElement("div"),
+    homeMessage: document.createElement("div"),
+    homeMessageH1: document.createElement("h1"),
+    homeMessageP1: document.createElement("p"),
+    homeMessageBtn: document.createElement("button"),
+
+    homeTopAnimation: document.createElement("div"),
+
     a1: document.createElement("div"),
   },
 };
