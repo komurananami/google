@@ -231,7 +231,7 @@ const App = {
         renderer: "svg",
         loop: true,
         autoplay: true,
-        animationData: A1,
+        animationData: A2,
       });
       els.worksCon.appendChild(els.worksConSection);
       els.worksConSection.appendChild(els.worksConSectionP1);
