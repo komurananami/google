@@ -38,12 +38,19 @@ const App = {
       els.headerRightA4.style.cursor = "pointer";
 
       els.main.style.padding = "0 80px";
+      els.shapTop.style.position = "absolute";
+      els.shapTop.style.zIndex = -1;
+      els.shapTop.style.top = "-1000px";
+      els.shapTop.style.right = "-1750px";
+      els.shapTop.style.width = "3000px";
+
       els.home.style.position = "relative";
       els.home.style.padding = "170px 0";
       els.homeTopAnimation.style.position = "absolute";
       els.homeTopAnimation.style.width = "600px";
       els.homeTopAnimation.style.top = "0px";
       els.homeTopAnimation.style.right = "10vw";
+      els.homeMessage.style.padding = "0 40px";
       els.homeMessageBtn.style.borderRadius = "20px";
       els.homeMessageBtn.style.cursor = "pointer";
       els.homeMessageBtn.style.border = "none";
@@ -72,6 +79,8 @@ const App = {
 
       els.app.appendChild(els.main);
       els.main.appendChild(els.home);
+      els.main.appendChild(els.shapTop);
+      els.shapTop.src = "./assets/blob.svg";
       els.home.appendChild(els.homeMessage);
       els.homeMessage.appendChild(els.homeMessageH1);
       els.homeMessageH1.innerHTML = "Nanami Komura's </br>Portfolio";
@@ -111,6 +120,7 @@ const App = {
     headerRightA4: document.createElement("a"),
 
     main: document.createElement("div"),
+    shapTop: document.createElement("img"),
     home: document.createElement("div"),
     homeMessage: document.createElement("div"),
     homeMessageH1: document.createElement("h1"),
@@ -118,7 +128,6 @@ const App = {
     homeMessageBtn: document.createElement("button"),
 
     homeTopAnimation: document.createElement("div"),
-
     a1: document.createElement("div"),
   },
 };
