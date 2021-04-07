@@ -16,6 +16,14 @@ const App = {
   controllers: {
     renderComponents() {
       const els = App.elements;
+
+      // const overHeaderLeftAImg = () => {
+      //   els.headerLeftAImg.style.textDecoration = "underline";
+      // };
+      // const outHeaderLeftAImg = () => {
+      //   els.headerLeftAImg.style.textDecoration = "none";
+      // };
+
       console.log(" Lets create the base elements");
 
       els.header.style.display = "flex";
@@ -30,6 +38,14 @@ const App = {
       els.headerRightA2.style.marginLeft = "20px";
       els.headerRightA3.style.marginLeft = "20px";
       els.headerRightA4.style.marginLeft = "20px";
+      els.headerLeftAImg.style.cursor = "pointer";
+      els.headerRightA1.style.cursor = "pointer";
+      els.headerRightA2.style.cursor = "pointer";
+      els.headerRightA3.style.cursor = "pointer";
+      els.headerRightA4.style.cursor = "pointer";
+
+      // els.headerLeftAImg.onmouseover = overHeaderLeftAImg;
+      // els.headerLeftAImg.onmouseout = outHeaderLeftAImg;
 
       els.app.appendChild(els.header);
       els.header.appendChild(els.headerLeft);
