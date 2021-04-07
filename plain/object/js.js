@@ -19,14 +19,17 @@ const App = {
 
       console.log(" Lets create the base elements");
 
-      els.header.style.display = "flex";
-      els.header.style.justifyContent = "space-between";
-      els.header.style.padding = "0 80px";
-      els.header.style.height = "100px";
-      els.header.style.zIndex = 10;
-      els.header.style.margin = "0 auto";
-      els.header.style.flexDirection = "row";
-      els.header.style.alignItems = "center";
+      els.header.style.position = "fixed";
+      els.header.style.zIndex = "10";
+      els.header.style.width = "100%";
+      els.headerCon.style.display = "flex";
+      els.headerCon.style.justifyContent = "space-between";
+      els.headerCon.style.padding = "0 80px";
+      els.headerCon.style.height = "100px";
+      els.headerCon.style.zIndex = 10;
+      els.headerCon.style.margin = "0 auto";
+      els.headerCon.style.flexDirection = "row";
+      els.headerCon.style.alignItems = "center";
       els.headerLeftAImg.style.width = "60px";
       els.headerRightA2.style.marginLeft = "20px";
       els.headerRightA3.style.marginLeft = "20px";
@@ -37,19 +40,28 @@ const App = {
       els.headerRightA3.style.cursor = "pointer";
       els.headerRightA4.style.cursor = "pointer";
 
-      els.main.style.padding = "0 80px";
-      els.shapTop.style.position = "absolute";
-      els.shapTop.style.zIndex = -1;
-      els.shapTop.style.top = "-1000px";
-      els.shapTop.style.right = "-1750px";
-      els.shapTop.style.width = "3000px";
+      els.main.style.padding = "80px";
+      els.main.style.overflow = "hidden";
+      els.main.style.height = "1700px";
+      els.main.style.position = "relative";
 
-      els.home.style.position = "relative";
+      els.shapeTop.style.position = "absolute";
+      els.shapeTop.style.zIndex = -1;
+      els.shapeTop.style.top = "-1230px";
+      els.shapeTop.style.right = "-2000px";
+      els.shapeTop.style.width = "3500px";
+
+      els.shapeBottom.style.position = "absolute";
+      els.shapeBottom.style.zIndex = -1;
+      els.shapeBottom.style.top = "1200px";
+      els.shapeBottom.style.right = "-200px";
+      els.shapeBottom.style.width = "2600px";
+
       els.home.style.padding = "170px 0";
       els.homeTopAnimation.style.position = "absolute";
       els.homeTopAnimation.style.width = "600px";
-      els.homeTopAnimation.style.top = "0px";
-      els.homeTopAnimation.style.right = "10vw";
+      els.homeTopAnimation.style.top = "50px";
+      els.homeTopAnimation.style.right = "15vw";
       els.homeMessage.style.padding = "0 40px";
       els.homeMessageBtn.style.borderRadius = "20px";
       els.homeMessageBtn.style.cursor = "pointer";
@@ -80,10 +92,53 @@ const App = {
       els.skillsConBox1Img.style.width = "200px";
       els.skillsConBox2Img.style.width = "200px";
       els.skillsConBox3Img.style.width = "200px";
+      //-------works
+      els.works.style.padding = "0 80px";
+      els.works.style.margin = "0 auto";
+      els.worksHeading.style.fontSize = "30px";
+      els.worksHeading.style.textAlign = "center";
+      els.worksHeading.style.paddingBottom = "60px";
+
+      els.worksCon.style.display = "flex";
+      els.worksConSection.style.width = "600px";
+      els.worksConSection.style.margin = "0 auto";
+      els.worksConSection.style.display = "flex";
+      els.worksConSection.style.justifyContent = "space-between";
+      els.worksConSection.style.padding = "0 50px";
+
+      els.worksConSectionP1.style.background = "#fe697d";
+      els.worksConSectionP1.style.height = "150px";
+      els.worksConSectionP1.style.width = "160px";
+      els.worksConSectionP1.style.margin = "0 20px";
+      els.worksConSectionP1.style.color = "white";
+      els.worksConSectionP1.style.textAlign = "center";
+      els.worksConSectionP1.style.lineHeight = "150px";
+      els.worksConSectionP1.style.boxShadow =
+        "3px 5px 5px rgba(70, 62, 62, 0.15)";
+      els.worksConSectionP2.style.background = "#fe697d";
+      els.worksConSectionP2.style.height = "150px";
+      els.worksConSectionP2.style.width = "160px";
+      els.worksConSectionP2.style.margin = "0 20px";
+      els.worksConSectionP2.style.color = "white";
+      els.worksConSectionP2.style.textAlign = "center";
+      els.worksConSectionP2.style.lineHeight = "150px";
+      els.worksConSectionP2.style.boxShadow =
+        "3px 5px 5px rgba(70, 62, 62, 0.15)";
+      els.worksConSectionP3.style.background = "#fe697d";
+      els.worksConSectionP3.style.height = "150px";
+      els.worksConSectionP3.style.width = "160px";
+      els.worksConSectionP3.style.margin = "0 20px";
+      els.worksConSectionP3.style.color = "white";
+      els.worksConSectionP3.style.textAlign = "center";
+      els.worksConSectionP3.style.lineHeight = "150px";
+      els.worksConSectionP3.style.boxShadow =
+        "3px 5px 5px rgba(70, 62, 62, 0.15)";
+
       //-------header
       els.app.appendChild(els.header);
-      els.header.appendChild(els.headerLeft);
-      els.header.appendChild(els.headerRight);
+      els.header.appendChild(els.headerCon);
+      els.headerCon.appendChild(els.headerLeft);
+      els.headerCon.appendChild(els.headerRight);
       els.headerLeft.appendChild(els.headerLeftA);
       els.headerLeftA.appendChild(els.headerLeftAImg);
       els.headerLeftAImg.src =
@@ -96,12 +151,15 @@ const App = {
       els.headerRightA3.innerHTML = "Works";
       els.headerRight.appendChild(els.headerRightA4);
       els.headerRightA4.innerHTML = "Playground";
+
       //-------main
       els.app.appendChild(els.main);
       //-------home
       els.main.appendChild(els.home);
-      els.main.appendChild(els.shapTop);
-      els.shapTop.src = "./assets/blob.svg";
+      els.main.appendChild(els.shapeTop);
+      els.shapeTop.src = "./assets/blob.svg";
+      els.main.appendChild(els.shapeBottom);
+      els.shapeBottom.src = "./assets/blob.svg";
       els.home.appendChild(els.homeMessage);
       els.homeMessage.appendChild(els.homeMessageH1);
       els.homeMessageH1.innerHTML = "Nanami Komura's </br>Portfolio";
@@ -161,6 +219,27 @@ const App = {
       els.skillsConBox3P2.innerHTML = "Twinmotion";
       els.skillsConBox3.appendChild(els.skillsConBox3P3);
       els.skillsConBox3P3.innerHTML = "Rhinoceros";
+      //-------works
+      els.main.appendChild(els.works);
+      els.works.appendChild(els.worksHeading);
+      els.worksHeading.innerHTML = "Works";
+      els.works.appendChild(els.worksCon);
+      els.worksCon.appendChild(els.worksConAnimation);
+      els.worksConAnimation.appendChild(els.a2);
+      lottie.loadAnimation({
+        container: els.a2,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        animationData: A1,
+      });
+      els.worksCon.appendChild(els.worksConSection);
+      els.worksConSection.appendChild(els.worksConSectionP1);
+      els.worksConSectionP1.innerHTML = "coming soon...";
+      els.worksConSection.appendChild(els.worksConSectionP2);
+      els.worksConSectionP2.innerHTML = "coming soon...";
+      els.worksConSection.appendChild(els.worksConSectionP3);
+      els.worksConSectionP3.innerHTML = "coming soon...";
 
       console.log("Done");
       console.log(app);
@@ -171,6 +250,7 @@ const App = {
     app: document.getElementById("app"),
     //-----header
     header: document.createElement("div"),
+    headerCon: document.createElement("div"),
     headerLeft: document.createElement("div"),
     headerRight: document.createElement("div"),
     headerLeftA: document.createElement("a"),
@@ -181,7 +261,8 @@ const App = {
     headerRightA4: document.createElement("a"),
     //------main
     main: document.createElement("div"),
-    shapTop: document.createElement("img"),
+    shapeTop: document.createElement("img"),
+    shapeBottom: document.createElement("img"),
     //-----home
     home: document.createElement("div"),
     homeMessage: document.createElement("div"),
@@ -215,6 +296,16 @@ const App = {
     skillsConBox3P1: document.createElement("p"),
     skillsConBox3P2: document.createElement("p"),
     skillsConBox3P3: document.createElement("p"),
+    //-------work
+    works: document.createElement("div"),
+    worksHeading: document.createElement("div"),
+    worksCon: document.createElement("div"),
+    worksConAnimation: document.createElement("div"),
+    a2: document.createElement("div"),
+    worksConSection: document.createElement("div"),
+    worksConSectionP1: document.createElement("p"),
+    worksConSectionP2: document.createElement("p"),
+    worksConSectionP3: document.createElement("p"),
   },
 };
 
